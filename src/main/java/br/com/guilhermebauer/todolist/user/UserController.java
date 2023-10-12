@@ -13,7 +13,7 @@ public class UserController {
 
     @Autowired
     private IUserRepository userRepository;
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity create(@RequestBody UserModel userModel){
         var user = this.userRepository.findByUsername(userModel.getUsername());
         if(user != null){
